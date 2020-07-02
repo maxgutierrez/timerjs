@@ -35,7 +35,6 @@ startBtn.addEventListener('click', function(){
       audio.loop = true;
       audio.play();
       displayStop.innerHTML = "<button id='stopBtn' onclick='stopBtn()'> PARAR </button>"
-      
       clearInterval(interval);
     }
     displayTime.innerText = `${currentMinute}:${currentSecond}`
