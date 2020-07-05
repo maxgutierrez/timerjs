@@ -86,11 +86,11 @@ body{
 
 .options-container::-webkit-scrollbar{/*scroll background*/
   width: 8px;
-  background: #0d141f;
+  background: #3e629c;
   border-radius: 0 8px 8px 0;
 }
 .options-container::-webkit-scrollbar-thumb {/*scroll parte rolavel*/
-  background: #525861;
+  background: #81a0d4;
   border-radius: 0 8px 8px 0;
 }
 .option, .selected{
@@ -99,13 +99,16 @@ body{
   cursor: pointer;
 }
 .option:hover {
-  background: #414b57;
+  background: #475f7c;
 }
 label{
   cursor: pointer;
 }
 .option .radio {
   display: none;/*esconde as bolinhas de marcaçao do radio*/
+}
+.option{
+  border: 1px solid rgba(20, 19, 48, 0.253);
 }
 /**********************************/
 button{
