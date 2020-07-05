@@ -9,16 +9,28 @@ body{
 .container {
   margin-top: 1px;
   padding: 32px;
+  /*centralizar*/
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
 }
 .minutes, .seconds, .hours{
+  text-align: center;
   flex-direction: column ;
   width: 100%;
   margin: 2px;
 }
-.select-box{
+
+.select-box1{
+  display: flex;
+  width: 500px;
+}
+.select-box2{
+  width: 500px;
   display: flex;
 }
-.select-box .options-container{
+.options-container{
   background: #345;
   color: white;
   max-height: 0;
@@ -52,11 +64,11 @@ body{
   height: 100%;
   width: 32px;
   right: 10px;
-  top: 5px;
+  top: 4px;
   transition: all 0.4s;
 }
 
-.select-box .options-container.active{ /* espaçamento entre classes de tag parent*/
+.options-container.active{ /* espaçamento entre classes de tag parent*/
   max-height: 240px;
   opacity: 1;
   overflow-y: scroll;/*o efeito de rolar a pagina WOW! */
@@ -66,26 +78,26 @@ body{
   top: 0px;
 }
 
-.select-box .options-container::-webkit-scrollbar{/*scroll background*/
+.options-container::-webkit-scrollbar{/*scroll background*/
   width: 8px;
   background: #0d141f;
   border-radius: 0 8px 8px 0;
 }
-.select-box .options-container::-webkit-scrollbar-thumb {/*scroll parte rolavel*/
+.options-container::-webkit-scrollbar-thumb {/*scroll parte rolavel*/
   background: #525861;
   border-radius: 0 8px 8px 0;
 }
-.select-box .option, .selected{
+.option, .selected{
   padding: 10px 10px;
   cursor: pointer;
 }
-.select-box .option:hover {
+.option:hover {
   background: #414b57;
 }
-.select-box label{
+label{
   cursor: pointer;
 }
-.select-box .option .radio {
+.option .radio {
   display: none;/*esconde as bolinhas de marcaçao do radio*/
 }
 /**********************************/
@@ -100,6 +112,9 @@ button{
   border: 1px solid white;
 }
 #execution-box{
+  z-index: -1;
+  margin-top: 100px;
+  position: absolute;
   text-align: center;
 }
 #stopBtn{
