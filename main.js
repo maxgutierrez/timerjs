@@ -1,3 +1,8 @@
+let currentHour;
+let currentMinute;
+let currentSecond;
+
+
 const hoursContainer = document.querySelector("#hours-container");
 const hoursSelected = document.querySelector("#hours-selected")
 const hoursOptionList = document.querySelectorAll("#hour-option");
@@ -10,6 +15,8 @@ hoursOptionList.forEach( minOption => {//em cada opt
   minOption.addEventListener('click', a => {//click para cada opt
     hoursSelected.innerHTML = minOption.querySelector('label').innerHTML;//selecionado = opt clicada
     hoursContainer.classList.remove('active');//fecha lista
+    hoursSelected.classList.remove('rotate');
+
   })
 })
 ///////////////////////////////////////////////
@@ -25,6 +32,8 @@ minutesOptionList.forEach( minOption => {//em cada opt
   minOption.addEventListener('click', a => {//click para cada opt
     minutesSelected.innerHTML = minOption.querySelector('label').innerHTML;//selecionado = opt clicada
     minutesContainer.classList.remove('active');//fecha lista
+    minutesSelected.classList.remove('rotate');
+
   })
 })
 //////////////////////////////////////////////////////////
@@ -41,6 +50,8 @@ secondsOptionList.forEach( secOption => {//em cada opt
   secOption.addEventListener('click', () => {//click para cada opt
     secondsSelected.innerHTML = secOption.querySelector('label').innerHTML;//selecionado = opt clicada
     secondsContainer.classList.remove('active');//fecha lista
+    secondsSelected.classList.remove('rotate');
+
   })
 })
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -52,15 +63,7 @@ const audio = document.querySelector("#audio");
 let displayBtn = document.querySelector("#display-btn")
 //pegar os dois primeiros digitos
 
-startBtn.addEventListener('click', ()=>{
-  stopBtn()
-  clearInterval(interval)
-  let currentHour = document.querySelector("#hours-selected").innerText.substring(0,2);
-  let currentMinute = document.querySelector("#minutes-selected").innerText.substring(0,2);
-  let currentSecond = document.querySelector("#seconds-selected").innerText.substring(0,2);
-
-  displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
-
+function count() {
   interval = setInterval(function(){
     if(currentSecond > 0){
       currentSecond--
@@ -79,8 +82,33 @@ startBtn.addEventListener('click', ()=>{
     }
     displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
   },1000);
+}
+
+startBtn.addEventListener('click', ()=>{
+  stopBtn()
+  clearInterval(interval)
+  currentHour = document.querySelector("#hours-selected").innerText.substring(0,2);
+  currentMinute = document.querySelector("#minutes-selected").innerText.substring(0,2);
+  currentSecond = document.querySelector("#seconds-selected").innerText.substring(0,2);
+
+  displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
+  count();
+  
 })
+
 function stopBtn(){
   audio.pause();
   displayBtn.innerHTML = '';
 }
+//pause-btn
+const pauseBtn = document.querySelector("#pause-btn");
+pauseBtn.addEventListener('click', ()=> {
+  clearInterval(interval);
+})
+//continue-btn
+const continueBtn = document.querySelector("#continue-btn");
+
+continueBtn.addEventListener('click', ()=>{
+  count()
+})
+

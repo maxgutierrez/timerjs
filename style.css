@@ -7,6 +7,7 @@ body{
   background-color: #789;
 }
 .container {
+  height: 120px;
   margin-top: 1px;
   padding: 32px;
   /*centralizar*/
@@ -64,7 +65,7 @@ body{
   height: 100%;
   width: 32px;
   right: 10px;
-  top: 4px;
+  top: 3px;
   transition: all 0.4s;
 }
 
@@ -75,7 +76,7 @@ body{
 }
 .selected.rotate::after {
   transform: rotateX(180deg);
-  top: 0px;
+  top: -1px;
 }
 
 .options-container::-webkit-scrollbar{/*scroll background*/
@@ -102,16 +103,18 @@ label{
 }
 /**********************************/
 button{
+  width: 150px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 2px;
   background: #0789;
   color: white;
-  font-size: 32px;
-  padding: 8px 20px;
+  font-size: 25px;
+  padding: 8px 0px 8px 0px;
   cursor: pointer;
   border: 1px solid white;
 }
 #execution-box{
+  width: 500px;
   z-index: -1;
   margin-top: 100px;
   position: absolute;
@@ -121,8 +124,6 @@ button{
   border-radius: 10px;
   background: rgb(255, 72, 0);
   color: white;
-  font-size: 32px;
-  padding: 8px 20px;
   cursor: pointer;
   border: 1px solid white;
 }
