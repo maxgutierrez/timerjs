@@ -4,16 +4,16 @@ let currentSecond;
 
 
 const hoursContainer = document.querySelector("#hours-container");
-const hoursSelected = document.querySelector("#hours-selected")
+const hoursSelected = document.querySelector("#hours-selected");
 const hoursOptionList = document.querySelectorAll("#hour-option");
 
 hoursSelected.addEventListener('click', ()=>{
   hoursContainer.classList.toggle('active');
   hoursSelected.classList.toggle('rotate');
 })
-hoursOptionList.forEach( minOption => {//em cada opt
-  minOption.addEventListener('click', a => {//click para cada opt
-    hoursSelected.innerHTML = minOption.querySelector('label').innerHTML;//selecionado = opt clicada
+hoursOptionList.forEach( hourOption => {//em cada opt
+  hourOption.addEventListener('click', () => {//click para cada opt
+    hoursSelected.innerHTML = hourOption.querySelector('label').innerHTML;//selecionado = opt clicada
     hoursContainer.classList.remove('active');//fecha lista
     hoursSelected.classList.remove('rotate');
 
@@ -29,7 +29,7 @@ minutesSelected.addEventListener('click', ()=>{
   minutesSelected.classList.toggle('rotate');
 })
 minutesOptionList.forEach( minOption => {//em cada opt
-  minOption.addEventListener('click', a => {//click para cada opt
+  minOption.addEventListener('click', () => {//click para cada opt
     minutesSelected.innerHTML = minOption.querySelector('label').innerHTML;//selecionado = opt clicada
     minutesContainer.classList.remove('active');//fecha lista
     minutesSelected.classList.remove('rotate');
@@ -92,6 +92,7 @@ startBtn.addEventListener('click', ()=>{
   currentSecond = document.querySelector("#seconds-selected").innerText.substring(0,2);
 
   displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
+  
   count();
   
 })

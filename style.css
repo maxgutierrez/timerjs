@@ -103,7 +103,7 @@ label{
 }
 /**********************************/
 button{
-  width: 150px;
+  width: 159px;
   border-radius: 10px;
   margin: 2px;
   background: #0789;
@@ -122,11 +122,16 @@ button{
 }
 #stopBtn{
   border-radius: 10px;
-  background: rgb(255, 72, 0);
+  background: rgb(255, 166, 0);
   color: white;
   cursor: pointer;
   border: 1px solid white;
 }
 audio{
   display: none;
+}
+.display-time{
+  margin-top: 150px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 90px;
 }
