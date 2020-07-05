@@ -2,9 +2,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+document{
+
+  border: 3px solid blue;
+}
 body{
+  text-shadow: 0 0 5px #006b8b;
   font-family: "Roboto", Sans-Serif;
-  background-color: #789;
+  background-color: rgb(3, 17, 31);
 }
 .container {
   height: 120px;
@@ -44,7 +49,7 @@ body{
   order: 1;
 }
 .selected {
-  font-size: 90%;
+  font-size: 120%;
   width: 100%;
   background: #2f3640;
   border-radius: 8px;
@@ -89,7 +94,8 @@ body{
   border-radius: 0 8px 8px 0;
 }
 .option, .selected{
-  padding: 10px 10px;
+  padding: 08px 0px 0px 0px;
+  height: 35px;
   cursor: pointer;
 }
 .option:hover {
@@ -131,6 +137,7 @@ audio{
   display: none;
 }
 .display-time{
+  color: rgb(223, 219, 219);
   margin-top: 150px;
   font-family: 'Orbitron', sans-serif;
   font-size: 90px;
