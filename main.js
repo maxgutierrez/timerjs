@@ -96,15 +96,17 @@ startBtn.addEventListener('click', ()=>{
   count();
   startBtn.style = "display:none"
   pauseBtn.style = "display:inline"
+  restartBtn.style ="display:inline"
   
-})
-//stop-btn
+}) 
+//stop-btn 
 let stopBtn =  document.querySelector("#stop-btn");
 
 stopBtn.addEventListener('click',()=>{
   audio.pause();
   stopBtn.style = "display:none"
   startBtn.style = "display:inline"
+  restartBtn.style ="display:none"
 })
 
 
@@ -117,10 +119,24 @@ pauseBtn.addEventListener('click', ()=> {
 })
 //continue-btn
 const continueBtn = document.querySelector("#continue-btn");
-
 continueBtn.addEventListener('click', ()=>{
   count()
   continueBtn.style = "display:none"
   pauseBtn.style = "display:inline"
 }) 
+//restart-btn
+const restartBtn = document.querySelector("#restart-btn");
+restartBtn.addEventListener('click',()=>{
+  audio.pause();
+  stopBtn.style = "display:none"
+  continueBtn.style = "display:none"
+  pauseBtn.style = "display:inline"
+  clearInterval(interval)
+  currentHour = document.querySelector("#hours-selected").innerText.substring(0,2);
+  currentMinute = document.querySelector("#minutes-selected").innerText.substring(0,2);
+  currentSecond = document.querySelector("#seconds-selected").innerText.substring(0,2);
 
+  displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
+  
+  count();
+})
