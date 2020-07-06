@@ -7,6 +7,7 @@
     <title>Custom select box</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
   </head>
+
   <body>
     <audio id="audio" src="audio.mp3"></audio>  
     
@@ -266,8 +267,7 @@
           </div><!--/options container---container de opcoes-->
         </div><!--/hours-->
       </div>
-
-
+ 
       <div class="select-box2">
 
         <div id="boxes" class="minutes">
@@ -782,9 +782,18 @@
       </div> <!--select-box-->
 
       <div id="execution-box">
-        <button id="start-btn">Iniciar</button>
-        <button id="pause-btn">Pausar</button>
-        <button id="continue-btn">Continuar</button>
+        <button id="start-btn" class="start-btn">
+          Iniciar
+        </button>
+        <button id="continue-btn" class="continue-btn">
+          Continuar
+        </button>
+        <button id="pause-btn" class="pause-btn">
+          Pausar
+        </button>
+        <button id='stop-btn' class="stop-btn">
+          PARAR
+        </button>
 
         <div id="display">
           <h3 id="display-time" class="display-time">
@@ -792,15 +801,16 @@
           </h3>
         </div><!-- display-->
         <div id="display-btn"></div>
+        <img src="/img/panda-dormindo.gif">
 
 
       </div><!--/execution-box-->
 
     </div><!--/container-->
+
     
-    
-    
-  
     <script src="main.js" type="text/javascript" charset="utf-8"></script>
+
   </body>
-</html>
+  
+</html> 

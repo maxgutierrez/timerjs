@@ -7,7 +7,7 @@ document{
   border: 3px solid blue;
 }
 body{
-  text-shadow: 0 0 5px #006b8b;
+  text-shadow: 0 0 10px #006b8b;
   font-family: "Roboto", Sans-Serif;
   background-color: rgb(3, 17, 31);
 }
@@ -62,7 +62,7 @@ body{
 
 .selected::after{
   content: "";
-  background: url("img/arrow-down.svg");
+  background: url("img/arrow-down.svg"); 
   background-size: contain;
   background-repeat: no-repeat;
   
@@ -83,7 +83,7 @@ body{
   transform: rotateX(180deg);
   top: -1px;
 }
-
+   
 .options-container::-webkit-scrollbar{/*scroll background*/
   width: 8px;
   background: #3e629c;
@@ -111,11 +111,14 @@ label{
   border: 1px solid rgba(20, 19, 48, 0.253);
 }
 /**********************************/
+
 button{
+  transition: all 2s; 
+  text-shadow: 0 0 10px #006b8b;
   width: 159px;
   border-radius: 10px;
   margin: 2px;
-  background: #0789;
+  background: #30143bb9;
   color: white;
   font-size: 25px;
   padding: 8px 0px 8px 0px;
@@ -129,9 +132,10 @@ button{
   position: absolute;
   text-align: center;
 }
-#stopBtn{
+.stop-btn{
+  display: none;
   border-radius: 10px;
-  background: rgb(255, 166, 0);
+  background: #30143bb9;
   color: white;
   cursor: pointer;
   border: 1px solid white;
@@ -144,4 +148,15 @@ audio{
   margin-top: 150px;
   font-family: 'Orbitron', sans-serif;
   font-size: 90px;
+}
+.pause-btn{ 
+  display: none;
+}
+.continue-btn{
+  display: none;
+} 
+img{
+  filter: drop-shadow(0px 0px 6px #ce5efa);
+  margin-bottom: 0;
+  position: absolute;
 }

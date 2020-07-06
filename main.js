@@ -77,15 +77,15 @@ function count() {
     }else{
       audio.loop = true;
       audio.play(); 
-      displayBtn.innerHTML = "<button id='stopBtn' onclick='stopBtn()'> PARAR </button>"
       clearInterval(interval);
+      stopBtn.style = "display:inline"
+      pauseBtn.style = "display:none"
     }
     displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
-  },1000);
+  },1000); 
 }
 
 startBtn.addEventListener('click', ()=>{
-  stopBtn()
   clearInterval(interval)
   currentHour = document.querySelector("#hours-selected").innerText.substring(0,2);
   currentMinute = document.querySelector("#minutes-selected").innerText.substring(0,2);
@@ -94,22 +94,33 @@ startBtn.addEventListener('click', ()=>{
   displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
   
   count();
+  startBtn.style = "display:none"
+  pauseBtn.style = "display:inline"
   
 })
+//stop-btn
+let stopBtn =  document.querySelector("#stop-btn");
 
-function stopBtn(){
+stopBtn.addEventListener('click',()=>{
   audio.pause();
-  displayBtn.innerHTML = '';
-}
+  stopBtn.style = "display:none"
+  startBtn.style = "display:inline"
+})
+
+
 //pause-btn
 const pauseBtn = document.querySelector("#pause-btn");
 pauseBtn.addEventListener('click', ()=> {
   clearInterval(interval);
+  continueBtn.style = "display:inline"
+  pauseBtn.style = "display:none"
 })
 //continue-btn
 const continueBtn = document.querySelector("#continue-btn");
 
 continueBtn.addEventListener('click', ()=>{
   count()
-})
+  continueBtn.style = "display:none"
+  pauseBtn.style = "display:inline"
+}) 
 
