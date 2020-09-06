@@ -160,4 +160,5 @@ img{
   filter: drop-shadow(0px 0px 6px #ce5efa);
   margin-bottom: 0;
   position: absolute;
+  z-index: -1;
 }
