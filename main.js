@@ -2,7 +2,6 @@ let currentHour;
 let currentMinute;
 let currentSecond;
 
-
 const hoursContainer = document.querySelector("#hours-container");
 const hoursSelected = document.querySelector("#hours-selected");
 const hoursOptionList = document.querySelectorAll("#hour-option");
@@ -82,6 +81,7 @@ function count() {
       pauseBtn.style = "display:none"
     }
     displayTime.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
+    window.title.innerHTML = `${currentHour}:${currentMinute}:${currentSecond}`
   },1000); 
 }
 

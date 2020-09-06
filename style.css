@@ -1,20 +1,16 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-document{
-
-  border: 3px solid blue;
 }
 body{
   text-shadow: 0 0 10px #006b8b;
   font-family: "Roboto", Sans-Serif;
   background-color: rgb(3, 17, 31);
 }
-.container {
-  height: 120px;
-  margin-top: 1px;
-  padding: 32px;
+form {
+  height: 320px;
+  padding-top: 100px;
   /*centralizar*/
   flex-direction: column;
   display: flex;
@@ -25,16 +21,14 @@ body{
   text-align: center;
   flex-direction: column ;
   width: 100%;
-  margin: 2px;
+  margin: 4px; /* ta errado ... a margem ta sendo add no item de cima tb*/
 }
 
-.select-box1{
+.select-box1, .select-box2{
   display: flex;
-  width: 500px;
-}
-.select-box2{
-  width: 500px;
-  display: flex;
+  min-width: 800px;
+  max-width: 800px;
+  font-size: 40px;
 }
 .options-container{
   background: #345;
@@ -43,16 +37,18 @@ body{
   width: 100%;
   opacity: 0;
   transition: all  0.4s;
-  border-radius: 8px;
+  border-radius: 20px;
   overflow: hidden;
   
   order: 1;
 }
 .selected {
-  font-size: 120%;
+  padding: 15px ;
+  height: 75px;
+  cursor: pointer;
   width: 100%;
   background: #2f3640;
-  border-radius: 8px;
+  border-radius: 20px;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
@@ -68,14 +64,14 @@ body{
   
   position: absolute;
   height: 100%;
-  width: 32px;
-  right: 10px;
-  top: 3px;
+  width: 62px;
+  right: 0px;
+  top: 5px;
   transition: all 0.4s;
 }
 
 .options-container.active{ /* espaçamento entre classes de tag parent*/
-  max-height: 240px;
+  max-height: 800px;
   opacity: 1;
   overflow-y: scroll;/*o efeito de rolar a pagina WOW! */
 }
@@ -85,17 +81,17 @@ body{
 }
    
 .options-container::-webkit-scrollbar{/*scroll background*/
-  width: 8px;
+  width: 20px;
   background: #3e629c;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 20px 20px 0;
 }
 .options-container::-webkit-scrollbar-thumb {/*scroll parte rolavel*/
   background: #81a0d4;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 20px 20px 0;
 }
-.option, .selected{
+.option{
   padding: 08px 0px 0px 0px;
-  height: 35px;
+  height: 75px;
   cursor: pointer;
 }
 .option:hover {
@@ -108,28 +104,30 @@ label{
   display: none;/*esconde as bolinhas de marcaçao do radio*/
 }
 .option{
-  border: 1px solid rgba(20, 19, 48, 0.253);
+  border: 2px solid rgba(20, 19, 48, 0.473);
 }
 /**********************************/
 
 button{
+  outline: none;
   transition: all 2s; 
   text-shadow: 0 0 10px #006b8b;
-  width: 159px;
-  border-radius: 10px;
+  width: 300px;
+  height: 80px;
+  border-radius: 20px;
   margin: 2px;
-  background: #30143bb9;
+  background: #8259f3b9;
   color: white;
-  font-size: 25px;
+  font-size: 45px;
   padding: 8px 0px 8px 0px;
   cursor: pointer;
-  border: 1px solid white;
 }
 #execution-box{
-  width: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 0px;
   z-index: -1;
-  margin-top: 100px;
-  position: absolute;
+  /*position: absolute;*/
   text-align: center;
 }
 .stop-btn{
@@ -145,9 +143,9 @@ audio{
 }
 .display-time{
   color: rgb(223, 219, 219);
-  margin-top: 150px;
+  margin-top: 80px;
   font-family: 'Orbitron', sans-serif;
-  font-size: 90px;
+  font-size: 100px;
 }
 .pause-btn{ 
   display: none;
